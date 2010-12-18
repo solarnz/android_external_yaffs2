@@ -49,12 +49,14 @@ LOCAL_CFLAGS+=   -Wmissing-prototypes -Wredundant-decls -Wnested-externs -Winlin
 LOCAL_CFLAGS+=   -DS_IWRITE=0200 -DS_IREAD=0400
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/yaffs2
 LOCAL_MODULE := libmkyaffs2image
+LOCAL_MODULE_TAGS := eng
 LOCAL_CFLAGS += -Dmain=mkyaffs2image_main
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libunyaffs
 LOCAL_SRC_FILES := yaffs2/utils/unyaffs.c
+LOCAL_MODULE_TAGS := eng
 LOCAL_CFLAGS =   -O2 -Wall -DCONFIG_YAFFS_UTIL -DCONFIG_YAFFS_DOES_ECC
 LOCAL_CFLAGS+=   -Wshadow -Wpointer-arith -Wwrite-strings -Wstrict-prototypes -Wmissing-declarations
 LOCAL_CFLAGS+=   -Wmissing-prototypes -Wredundant-decls -Wnested-externs -Winline
