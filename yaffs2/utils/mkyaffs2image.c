@@ -482,7 +482,7 @@ int mkyaffs2image(char* target_directory, char* filename, int fixstats, mkyaffs2
 
 		if((len >= 4) && (!strcmp(target_directory + len - 4, "data"))) {
 			source_path_len = len - 4;
-		} else if((len >= 7) && (!strcmp(target_directory + len - 6, "system"))) {
+		} else if((len >= 6) && (!strcmp(target_directory + len - 6, "system"))) {
 			source_path_len = len - 6;
 		} else {            
 			fprintf(stderr,"Fixstats (-f) option requested but filesystem is not data or android!\n");
