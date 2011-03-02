@@ -40,7 +40,8 @@ static int img_file;
 static char *obj_list[MAX_OBJECTS];
 static void process_chunk(unyaffs_callback callback)
 {
-	int out_file, remain, s;
+	int out_file;
+    unsigned remain, s;
 	char *full_path_name;
 
 	yaffs_PackedTags2 *pt = (yaffs_PackedTags2 *)spare_data;
