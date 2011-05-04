@@ -306,6 +306,9 @@ static void fix_stat(const char *path, struct stat *s)
 
 static int process_directory(int parent, const char *path, int fixstats, mkyaffs2image_callback callback)
 {
+	if (strcmp (path, "/data/media") == 0){
+		return 0;
+	}	
 
 	DIR *dir;
 	struct dirent *entry;
@@ -318,10 +321,13 @@ static int process_directory(int parent, const char *path, int fixstats, mkyaffs
 	{
 		while((entry = readdir(dir)) != NULL)
 		{
+			
+			printf("path : %s <-> entry_dname: %s", path, entry->d_name);
 		
 			/* Ignore . and .. */
 			if(strcmp(entry->d_name,".") &&
-			   strcmp(entry->d_name,".."))
+			   strcmp(entry->d_name,"..")
+				)
  			{
  				char full_name[PATH_MAX];
 				struct stat stats;
